@@ -12,9 +12,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 from pathlib import Path
 
-
-
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -30,8 +27,8 @@ with open(os.path.join(BASE_DIR, 'secret_key.txt')) as f:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','.ngrok.io']
-
+ALLOWED_HOSTS = ['astratechztestapp.pagekite.me', 'localhost', '127.0.0.1', '*']
+#ALLOWED_HOSTS = ['*', '172.105.59.232']
 
 # Application definition
 
@@ -143,7 +140,7 @@ MEDIA_ROOT = BASE_DIR / 'static/images'
 # #HTTPS settings
 # SESSION_COOKIE_SECURE = True
 # CSRF_COOKIE_SECURE = True
-# #SECURE_SSL_REDIRECT = True
+# SECURE_SSL_REDIRECT = True
 
 #STATIC_ROOT = 
 
