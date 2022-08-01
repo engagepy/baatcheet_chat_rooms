@@ -25,9 +25,9 @@ with open(os.path.join(BASE_DIR, 'secret_key.txt')) as f:
     SECRET_KEY=f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['astratechztestapp.pagekite.me', 'localhost', '127.0.0.1', '*']
+ALLOWED_HOSTS = ['astratechztestapp.pagekite.me', 'localhost', '127.0.0.1', 'baatcheet-india.herokuapp.com']
 #ALLOWED_HOSTS = ['*', '172.105.59.232']
 
 # Application definition
