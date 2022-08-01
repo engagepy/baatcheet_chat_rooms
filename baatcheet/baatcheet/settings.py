@@ -80,7 +80,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'baatcheet.wsgi.application'
+WSGI_APPLICATION = 'baatcheet/baatcheet.wsgi.application'
 
 
 # Database
