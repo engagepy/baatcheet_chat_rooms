@@ -25,9 +25,9 @@ with open(os.path.join(BASE_DIR, 'secret_key.txt')) as f:
     SECRET_KEY=f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['astratechztestapp.pagekite.me', 'localhost', '127.0.0.1', 'baatcheet-india.herokuapp.com']
+ALLOWED_HOSTS = ['astratechztestapp.pagekite.me', 'localhost', '127.0.0.1', '*']
 #ALLOWED_HOSTS = ['*', '172.105.59.232']
 
 # Application definition
@@ -50,7 +50,6 @@ AUTH_USER_MODEL = 'base.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -80,7 +79,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'baatcheet/baatcheet.wsgi.application'
+WSGI_APPLICATION = 'baatcheet.wsgi.application'
 
 
 # Database
@@ -128,15 +127,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = 'static/'
 MEDIA_URL = '/images/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+    BASE_DIR / 'static'
 ]
 
-MEDIA_ROOT = os.path.join(BASE_DIR , 'static/images')
+MEDIA_ROOT = BASE_DIR / 'static/images'
 
 
 # #HTTPS settings
