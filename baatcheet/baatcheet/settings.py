@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
 from pathlib import Path
+import sec
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -19,8 +20,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-m7fxf1q#@&u!**+x3_6+fa3f3s!+&=u^@b^_^u-g&viz-i4z=8'
 with open(os.path.join(BASE_DIR, 'secret_key.txt')) as f:
     SECRET_KEY=f.read().strip()
 
@@ -28,7 +27,7 @@ with open(os.path.join(BASE_DIR, 'secret_key.txt')) as f:
 DEBUG = True
 
 ALLOWED_HOSTS = ['https://test-astratechztestapp.pagekite.me', 'localhost', '127.0.0.1', '*']
-#ALLOWED_HOSTS = ['*', '172.105.59.232']
+
 
 # Application definition
 
@@ -132,7 +131,8 @@ STATIC_URL = 'static/'
 MEDIA_URL = '/images/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'static'
+    BASE_DIR / 'static',
+
 ]
 
 MEDIA_ROOT = BASE_DIR / 'static/images'
@@ -143,7 +143,7 @@ MEDIA_ROOT = BASE_DIR / 'static/images'
 # CSRF_COOKIE_SECURE = True
 # SECURE_SSL_REDIRECT = True
 
-#STATIC_ROOT = 
+#STATIC_ROOT = BASE_DIR / 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -151,3 +151,12 @@ MEDIA_ROOT = BASE_DIR / 'static/images'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOW_ALL_ORIGINS = True
 CSRF_TRUSTED_ORIGINS = ['https://test-astratechztestapp.pagekite.me']
+
+
+AWS_ACCESS_KEY_ID = sec.AWS_KEY
+AWS_SECRET_ACCESS_KEY = sec.AWS_ACC_KEY
+AWS_STORAGE_BUCKET_NAME = "baatcheet"
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+#STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
