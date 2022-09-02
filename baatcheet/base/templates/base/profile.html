@@ -17,7 +17,7 @@
             </div>
           </div>
           <div class="profile__info">
-            <h3>{{user.username}}</h3>
+            <h3>{{user.email}}</h3>
             <p>@{{user.username}}</p>
             {% if request.user == user %}
             <a href="{% url 'updateuser' %}" class="btn btn--main btn--pill">Edit Profile</a>
