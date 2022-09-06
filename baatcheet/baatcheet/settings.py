@@ -10,9 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
+from dotenv import load_dotenv, find_dotenv
+
+load_dotenv(find_dotenv())
+# import environ
+# environ.Env.read_env()
 import sys
 from pathlib import Path
-import sec
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,8 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
-with open(os.path.join(BASE_DIR, 'secret_key.txt')) as f:
-    SECRET_KEY=f.read().strip()
+SECRET_KEY=os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -91,7 +94,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'BaatCheet',
         'USER': 'BaatCheet',
-        'PASSWORD': sec.PASSWORD,
+        'PASSWORD': os.environ['PASSWORD'],
         'HOST': 'database-1.ckkmqlz6k2zt.ap-south-1.rds.amazonaws.com',
         'PORT': 5432
 
@@ -136,11 +139,11 @@ USE_TZ = True
 # STATIC_URL = 'static/'
 # MEDIA_URL = '/images/'
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-    'static/'
+# STATICFILES_DIRS = [
+#     BASE_DIR / 'static',
+#     'static/'
 
-]
+# ]
 
 MEDIA_ROOT = BASE_DIR / 'static/images'
 
@@ -164,10 +167,10 @@ CSRF_TRUSTED_ORIGINS = ['https://test-astratechztestapp.pagekite.me']
 
 STATICFILES_LOCATION = 'static'
 MEDIAFILES_LOCATION = 'media'
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % sec.BUCKET_NAME
-AWS_ACCESS_KEY_ID = sec.AWS_KEY
-AWS_SECRET_ACCESS_KEY = sec.AWS_ACC_KEY
-AWS_STORAGE_BUCKET_NAME = sec.BUCKET_NAME
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % os.environ['BUCKET_NAME']
+AWS_ACCESS_KEY_ID = os.environ['AWS_KEY']
+AWS_SECRET_ACCESS_KEY = os.environ['AWS_ACC_KEY']
+AWS_STORAGE_BUCKET_NAME = os.environ['BUCKET_NAME']
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
