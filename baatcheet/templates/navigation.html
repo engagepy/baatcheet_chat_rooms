@@ -4,7 +4,7 @@
       <a href="{% url 'home' %}" class="header__logo">
         <img src="{% static 'images/mainlogo.svg' %}" />
         <h1>BaatCheet</h1>
-        <h6>(NCR Event Hub)</h6>
+       
         
       </a>
       <form class="header__search" method="GET" action="{% url 'home' %}">
@@ -26,7 +26,7 @@
         <div class="header__user">
           <a href="{% url 'userprofile' user.id %}">
             <div class="avatar avatar--medium active">
-              <img src="{{request.user.avatar.url}}" />
+              <img src="{% static 'images/avatar.svg' %}" />
             </div>
             <p>{{request.user.email}}<span>@{{request.user.username}}</span></p>
           </a>
