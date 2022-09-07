@@ -1,3 +1,4 @@
+from distutils.command import upload
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
@@ -7,7 +8,7 @@ class User(AbstractUser):
     email = models.EmailField(null=True, unique=True, max_length=100)
     bio = models.TextField(null=True)
 
-    avatar = models.ImageField(null=True, default="avatar.svg")
+    avatar = models.ImageField(null=True, default="avatar.svg", upload_to='uploads/')
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']

@@ -146,7 +146,7 @@ USE_TZ = True
 
 # ]
 
-MEDIA_ROOT = BASE_DIR / 'static/images'
+MEDIA_ROOT = os.path.join (BASE_DIR, 'static/images/')#BASE_DIR / 'static/images'
 
 
 # #HTTPS settings
