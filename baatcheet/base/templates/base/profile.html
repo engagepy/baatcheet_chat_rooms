@@ -1,7 +1,6 @@
 {%extends 'main.html' %}
 
 {% block content %}
- {% load static %}
 
   <main class="profile-page layout layout--3">
     <div class="container">
@@ -14,7 +13,7 @@
         <div class="profile">
           <div class="profile__avatar">
             <div class="avatar avatar--large active">
-              <img src="{% static 'images/avatar.svg' %}" />
+              <img src="{{user.avatar.url}}" />
             </div>
           </div>
           <div class="profile__info">
@@ -34,7 +33,7 @@
 
         <div class="roomList__header">
           <div>
-            <h2> Hosted by </a>
+            <h2>Scene Hosted by </a>
             </h2>
           </div>
         </div>

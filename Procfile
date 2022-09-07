@@ -1,1 +1,0 @@
-web: gunicorn baatcheetapp.wsgi --log-file -
