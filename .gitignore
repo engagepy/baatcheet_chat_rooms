@@ -3,6 +3,8 @@ env/
 secret_key.txt
 sec.py
 
+baatcheet/__pycache__/
+
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
