@@ -2,8 +2,14 @@
 env/
 secret_key.txt
 sec.py
+django.config
+pagekite.py
+.DS_Store
+
 
 baatcheet/__pycache__/
+baatcheet/.ebextension/
+baatcheet/.elasticbeanstalk/
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
