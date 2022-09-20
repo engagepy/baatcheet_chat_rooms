@@ -1,0 +1,9 @@
+.env
+env/
+secret_key.txt
+sec.py
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

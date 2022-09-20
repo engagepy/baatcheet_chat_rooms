@@ -30,7 +30,7 @@ SECRET_KEY=os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['baatcheetapp.herokuapp.com/','test-astratechztestapp.pagekite.me', 'localhost', '127.0.0.1', '*']
+ALLOWED_HOSTS = ['django-env.eba-vjrkchkk.us-west-2.elasticbeanstalk.com','test-astratechztestapp.pagekite.me', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -161,7 +161,7 @@ MEDIA_ROOT = os.path.join (BASE_DIR, 'static/images/')#BASE_DIR / 'static/images
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOW_ALL_ORIGINS = True
-CSRF_TRUSTED_ORIGINS = ['https://test-astratechztestapp.pagekite.me']
+CSRF_TRUSTED_ORIGINS = ['django-env.eba-vjrkchkk.us-west-2.elasticbeanstalk.com', 'https://test-astratechztestapp.pagekite.me']
 
 #INSTRUCTIONS FOR S3 UPLOAD AND CSS RENDERING 
 #STATIC LOCATIONS NEED DEPTH AND SECRETS NEEDS TO PLATFORM INDEPEDENT
