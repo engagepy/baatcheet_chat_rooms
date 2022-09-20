@@ -161,7 +161,7 @@ MEDIA_ROOT = os.path.join (BASE_DIR, 'static/images/')#BASE_DIR / 'static/images
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOW_ALL_ORIGINS = True
-CSRF_TRUSTED_ORIGINS = ['django-env.eba-vjrkchkk.us-west-2.elasticbeanstalk.com', 'https://test-astratechztestapp.pagekite.me']
+CSRF_TRUSTED_ORIGINS = ['https://django-env.eba-vjrkchkk.us-west-2.elasticbeanstalk.com', 'https://test-astratechztestapp.pagekite.me']
 
 #INSTRUCTIONS FOR S3 UPLOAD AND CSS RENDERING 
 #STATIC LOCATIONS NEED DEPTH AND SECRETS NEEDS TO PLATFORM INDEPEDENT
