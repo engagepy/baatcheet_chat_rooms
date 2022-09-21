@@ -11,11 +11,11 @@
 
 ### Follow these steps:
 
-####Activate virtual environment 
+#### Activate virtual environment 
 
-####Clone the Repo
+#### Clone the Repo
 
-####Setup a .env file 
+#### Setup a .env file 
 
 > Directory structure for .env:
 
@@ -36,14 +36,14 @@
 
 ```SECRET_KEY =```
 
-####Install 'requirements.txt'
+#### Install 'requirements.txt'
 
 ```pip3 install -r requirements.txt```
 
-####cd into the 'baatcheet' directory 
+#### cd into the 'baatcheet' directory 
 
  ```cd baatcheet```
 
-####Run ```manage.py```
+#### Run ```manage.py```
 
 > ```python3 manage.py runserver```
