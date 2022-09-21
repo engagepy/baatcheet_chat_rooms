@@ -27,7 +27,7 @@
 
 #### 3. Clone the Repo
 
-   git clone https://github.com/zora89/django_baatcheet.git
+    git clone https://github.com/zora89/django_baatcheet.git
 
 #### 4. Setup a .env file 
 
@@ -52,12 +52,12 @@
 
 #### 5. Install 'requirements.txt'
 
-```pip3 install -r requirements.txt```
+    pip3 install -r requirements.txt    
 
 #### 6. cd into the 'baatcheet' directory 
 
- ```cd baatcheet```
+    cd baatcheet    
 
 #### 7. Run ```manage.py```
 
-> ```python3 manage.py runserver```
+    python3 manage.py runserver 
