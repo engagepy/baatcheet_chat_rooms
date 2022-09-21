@@ -30,6 +30,8 @@
 
 > cd into the 'baatcheet' directory 
 
+ ```cd baatcheet```
+
 > Run ```manage.py```
 
 ```python3 manage.py runserver```
