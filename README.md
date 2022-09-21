@@ -15,12 +15,18 @@
 
 > Clone the Repo
 
-> Setup a .env file with the following variables: 
+> Setup a .env file 
 
-Directory structure for .env:
+-Directory structure for .env:
 
-baatcheet⮐
+-baatcheet⮐
+
     .env
+
+
+>with the following variables: 
+
+
 
 ```AWS_KEY =``` 
 ```AWS_ACC_KEY =``` 
