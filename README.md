@@ -9,7 +9,13 @@
 - S3 Profile Images 
 - RDS Postgres db
 
-### 1. Follow these steps:
+### Follow these steps:
+
+#### 1. Create a project directory, cd into it
+
+```mkdir chatroom```
+
+```cd chatroom```
 
 #### 2. Activate virtual environment 
 
