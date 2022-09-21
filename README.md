@@ -9,13 +9,13 @@
 - S3 Profile Images 
 - RDS Postgres db
 
-### Follow these steps:
+### 1. Follow these steps:
 
-#### Activate virtual environment 
+#### 2. Activate virtual environment 
 
-#### Clone the Repo
+#### 3. Clone the Repo
 
-#### Setup a .env file 
+#### 4. Setup a .env file 
 
 > Directory structure for .env:
 
@@ -36,14 +36,14 @@
 
 ```SECRET_KEY =```
 
-#### Install 'requirements.txt'
+#### 5. Install 'requirements.txt'
 
 ```pip3 install -r requirements.txt```
 
-#### cd into the 'baatcheet' directory 
+#### 6. cd into the 'baatcheet' directory 
 
  ```cd baatcheet```
 
-#### Run ```manage.py```
+#### 7. Run ```manage.py```
 
 > ```python3 manage.py runserver```
