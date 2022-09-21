@@ -27,7 +27,7 @@ SECRET_KEY=os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['baatcheet-env.eba-vjrkchkk.us-west-2.elasticbeanstalk.com','test-astratechztestapp.pagekite.me', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['baatcheet-dev.ap-south-1.elasticbeanstalk.com','test-astratechztestapp.pagekite.me', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -152,7 +152,7 @@ MEDIAFILES_LOCATION = 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOW_ALL_ORIGINS = True
-CSRF_TRUSTED_ORIGINS = ['https://baatcheet-env.eba-vjrkchkk.us-west-2.elasticbeanstalk.com', 'https://test-astratechztestapp.pagekite.me']
+CSRF_TRUSTED_ORIGINS = ['https://baatcheet-dev.ap-south-1.elasticbeanstalk.com', 'https://test-astratechztestapp.pagekite.me']
 
 #INSTRUCTIONS FOR S3 UPLOAD AND CSS RENDERING 
 #STATIC LOCATIONS NEED DEPTH AND SECRETS NEEDS TO PLATFORM INDEPEDENT
