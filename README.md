@@ -27,9 +27,13 @@ Setup a .env file
 > add following variables to .env: 
 
 ```AWS_KEY =``` 
+
 ```AWS_ACC_KEY =``` 
+
 ```BUCKET_NAME =``` 
+
 ```PASSWORD =``` 
+
 ```SECRET_KEY =```
 
 Install 'requirements.txt'
