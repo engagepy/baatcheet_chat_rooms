@@ -19,7 +19,7 @@
 
 -Directory structure for .env:
 
--baatcheet⮐
+    baatcheet⮐
 
     .env
 
