@@ -13,11 +13,20 @@
 
 > Activate virtual environment 
 
-> Close the Repo
+> Clone the Repo
+
+> Setup a .env file with the following variables: 
+
+```AWS_KEY =``` 
+```AWS_ACC_KEY =``` 
+```BUCKET_NAME =``` 
+```PASSWORD =``` 
+```SECRET_KEY =```
 
 > Install 'requirements.txt'
 
 ```pip3 install -r requirements.txt```
+
 
 > cd into the 'baatcheet' directory 
 
