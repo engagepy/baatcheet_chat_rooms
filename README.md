@@ -17,6 +17,11 @@
 
 > Setup a .env file with the following variables: 
 
+Directory structure for .env:
+
+baatcheet⮐
+    .env
+
 ```AWS_KEY =``` 
 ```AWS_ACC_KEY =``` 
 ```BUCKET_NAME =``` 
