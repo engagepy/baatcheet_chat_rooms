@@ -13,9 +13,6 @@ import os
 from dotenv import load_dotenv, find_dotenv
 
 load_dotenv(find_dotenv())
-# import environ
-# environ.Env.read_env()
-import sys
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -137,24 +134,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-# STATIC_URL = 'static/'
-# MEDIA_URL = '/images/'
-
-# STATICFILES_DIRS = [
-#     BASE_DIR / 'static',
-#     'static/'
-
-# ]
-
+STATIC_ROOT = os.path.join (BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join (BASE_DIR, 'static/images/')#BASE_DIR / 'static/images'
 
+STATICFILES_LOCATION = 'static'
+MEDIAFILES_LOCATION = 'media'
 
-# #HTTPS settings
+
+# Security & HTTPS settings
+
 # SESSION_COOKIE_SECURE = True
 # CSRF_COOKIE_SECURE = True
 # SECURE_SSL_REDIRECT = True
-
-#STATIC_ROOT = BASE_DIR / 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -166,8 +157,6 @@ CSRF_TRUSTED_ORIGINS = ['https://django-env.eba-vjrkchkk.us-west-2.elasticbeanst
 #INSTRUCTIONS FOR S3 UPLOAD AND CSS RENDERING 
 #STATIC LOCATIONS NEED DEPTH AND SECRETS NEEDS TO PLATFORM INDEPEDENT
 
-STATICFILES_LOCATION = 'static'
-MEDIAFILES_LOCATION = 'media'
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % os.environ['BUCKET_NAME']
 AWS_ACCESS_KEY_ID = os.environ['AWS_KEY']
 AWS_SECRET_ACCESS_KEY = os.environ['AWS_ACC_KEY']
@@ -177,6 +166,6 @@ AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 
-STATIC_ROOT = os.path.join (BASE_DIR, 'static')
 STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
 MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+
