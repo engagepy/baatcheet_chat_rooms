@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY=os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['baatcheet-env.eba-vjrkchkk.us-west-2.elasticbeanstalk.com','test-astratechztestapp.pagekite.me', 'localhost', '127.0.0.1']
 
