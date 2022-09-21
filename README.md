@@ -13,13 +13,21 @@
 
 #### 1. Create a project directory, cd into it
 
-```mkdir chatroom```
+    mkdir chatroom  
 
-```cd chatroom```
+    cd chatroom  
 
-#### 2. Activate virtual environment 
+#### 2. Create and activate virtual environment 
+
+> for macos..
+
+    python3 -m venv venv    
+
+    source venv/bin/activate    
 
 #### 3. Clone the Repo
+
+   git clone https://github.com/zora89/django_baatcheet.git
 
 #### 4. Setup a .env file 
 
@@ -32,15 +40,15 @@
 
 > add following variables to .env: 
 
-```AWS_KEY =``` 
+    AWS_KEY =      
 
-```AWS_ACC_KEY =``` 
+    AWS_ACC_KEY = 
 
-```BUCKET_NAME =``` 
+    BUCKET_NAME = 
 
-```PASSWORD =``` 
+    PASSWORD =
 
-```SECRET_KEY =```
+    SECRET_KEY =
 
 #### 5. Install 'requirements.txt'
 
