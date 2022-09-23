@@ -151,7 +151,7 @@ MEDIAFILES_LOCATION = 'media'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = False
 CSRF_TRUSTED_ORIGINS = ['https://baatcheet-dev.ap-south-1.elasticbeanstalk.com', 'https://test-astratechztestapp.pagekite.me']
 
 #INSTRUCTIONS FOR S3 UPLOAD AND CSS RENDERING 
