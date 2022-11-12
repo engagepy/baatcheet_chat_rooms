@@ -91,7 +91,7 @@
                         <div class="avatar avatar--small">
                           <img src="{{message.user.avatar.url}}" />
                         </div>
-                        <span>@{{message.user.username}}</span>
+                        <span>@{{message.user}}</span>
                       </a>
                       <span class="thread__date">{{message.created | timesince }} ago</span>
                     </div>
@@ -137,7 +137,7 @@
               </div>
               <p>
                 <!-- {{user.name}} -->
-                <span>@{{user.username}}</span>
+                <span>@{{user.name}}</span>
               </p>
             </a>
             {% endfor %}
