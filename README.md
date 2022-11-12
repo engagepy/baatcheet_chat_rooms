@@ -1,4 +1,8 @@
-![alt text](https://www.canva.com/design/DAFHXCwBsC0/LH7v9hEnP7VsGIk67SZUkA/view?utm_content=DAFHXCwBsC0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+<img
+  src="https://www.canva.com/design/DAFHXCwBsC0/LH7v9hEnP7VsGIk67SZUkA/view?utm_content=DAFHXCwBsC0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+  alt="Alt text"
+  title="Optional title"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
 
 # Django Scaffold - AWS > EC2 > RDS PostgreSQL > Load Balancer > Nginx > Gunicorn > Domain
 
