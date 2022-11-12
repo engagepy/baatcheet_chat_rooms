@@ -132,11 +132,15 @@
             {% for user in participants %}
             <a href="{% url 'userprofile' user.id %}" class="participant">
               <div class="avatar avatar--medium">
+                {%if user.avatar.url %}
                 <img src="{{user.avatar.url}}" />
+                {%else%}
+                <img src="{% static '/images/avatar.svg' %}" /> 
+                {%endif%}
               </div>
               <p>
                 <!-- {{user.name}} -->
-                <span>@{{user.name}}</span>
+                <span>@{{user.username}}</span>
               </p>
             </a>
             {% endfor %}
