@@ -1,3 +1,8 @@
+![Untitled (512 × 481px) (1200 × 500px) (4)](https://user-images.githubusercontent.com/42845567/201497019-2dd93260-117d-4237-99ab-975e3fe21d4a.png)
+
+
+
+
 # Django Scaffold - AWS > EC2 > RDS PostgreSQL > Load Balancer > Nginx > Gunicorn > Domain
 
 ## A Scafold Project Enabling CRUD functionality:
