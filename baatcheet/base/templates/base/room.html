@@ -120,20 +120,8 @@
           <div class="room__message">
             <form action="" method="POST">
             {% csrf_token %}
-
-
-                    <!-- Logged In -->
-        {%if request.user.is_authenticated %}
-        <input name="body" placeholder="Press ⮐ to post" /></form>
-        {% else %}
-
-                <!-- Not Logged In -->
-        <a href="{% url 'login' %}">
-          <img src="{% static '/images/avatar.svg' %}" /> 
-          <p>Login</p>
-        </a>
-        {% endif %}
             
+            <input name="body" placeholder="Press ⮐ to post" /></form>
           </div>
         </div>
         <!-- Room End -->
