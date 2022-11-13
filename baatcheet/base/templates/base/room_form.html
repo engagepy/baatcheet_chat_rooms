@@ -24,7 +24,7 @@
             {% csrf_token %}
 
             <div class="form__group">
-              <label for="room_topic">Topic</label>
+              <label for="room_topic">Theme</label>
               <input required type = "text" value="{{room.topic.name}}" name ="topic" list="topic-list" />
               <datalist id="topic-list">
                 <select id="room_topic">
@@ -41,7 +41,7 @@
 
 
             <div class="form__group">
-              <label for="room_name">Room Title</label>
+              <label for="room_name">Topic</label>
               {{form.name}}
 
               <!-- <input id="room_name" name="room_name" type="text" placeholder="E.g. Mastering Python + Django" /> -->
