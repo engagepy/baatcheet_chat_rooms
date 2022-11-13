@@ -195,8 +195,7 @@ def updateUser(request):
 def topicsPage(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
     topics = Topic.objects.filter(name__icontains=q)
-    topic = Topic.objects.all()[0:7]
-    return render(request, 'base/topics.html', {'topics': topics, 'topic':topic})
+    return render(request, 'base/topics.html', {'topics': topics})
 
 def activityPage(request):
     room_messages = Message.objects.all()
