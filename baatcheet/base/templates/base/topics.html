@@ -37,10 +37,12 @@
               <li>
                 <a href="{%url 'topics' %}" class="active">All <span>{{topics.count}}</span></a>
               </li>
-              {% for top in topic %}
+              {% for topic in topics %}
+              {% if forloop.counter <= 7 %}
               <li>
-                <a href="{% url 'home' %}?q={{topic.name}}">{{top.name}} <span>{{top.room_set.all.count}}</span></a>
+                <a href="{% url 'home' %}?q={{topic.name}}">{{topic.name}} <span>{{topic.room_set.all.count}}</span></a>
               </li>
+              {% endif %}
               {% endfor %}
            
               </li>
