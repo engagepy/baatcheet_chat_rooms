@@ -57,6 +57,7 @@ def registerPage(request):
 
     return render(request, 'base/login_register.html', {'form': form})
 
+
 def home(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
     rooms = Room.objects.filter(
@@ -71,6 +72,7 @@ def home(request):
     home_data = {'rooms': rooms, 'topics': topic, 'room_count': room_count,'topicx':topicx, 'room_messages':room_messages }
     return render(request, 'base/home.html', home_data )
 
+@login_required(login_url="login")
 def room(request, id):
     room = Room.objects.get(id=id)
     room_messages = room.message_set.all()
@@ -87,7 +89,7 @@ def room(request, id):
 
     room_data = {'room': room, 'room_messages': room_messages, 'participants':participants}
     return render(request, 'base/room.html', room_data)
-
+@login_required(login_url="login")
 def userProfile(request, id):
     user = User.objects.get(id=id)
     rooms = user.room_set.all()
@@ -178,7 +180,7 @@ def deleteMessage(request, id):
 
     return render(request, 'base/delete.html', {'obj': message})
 
-@login_required
+@login_required(login_url="login")
 def updateUser(request):
     user = request.user
     form = UserForm(instance = user)
@@ -191,12 +193,12 @@ def updateUser(request):
 
 
     return render(request,'base/updateuser.html' , {'form': form})
-
+@login_required(login_url="login")
 def topicsPage(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
     topics = Topic.objects.filter(name__icontains=q)
     return render(request, 'base/topics.html', {'topics': topics})
-
+@login_required(login_url="login")
 def activityPage(request):
     room_messages = Message.objects.all()
     return render(request, 'base/activity.html', {'room_messages': room_messages})
