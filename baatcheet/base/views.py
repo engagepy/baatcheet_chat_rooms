@@ -5,15 +5,57 @@ from django.db.models import Q
 from .models import Room, Topic, Message, User
 from .forms import RoomForm, UserForm, MyUserCreationForm
 from django.contrib.auth import authenticate, login, logout
-
 from django.contrib.auth.decorators import login_required
 
+ # OTP related imports only below:
+
+from django.conf import settings
+from django.core.mail import send_mail
+import math, random
+from threading import Thread
+import datetime
+
+# def generateOTP() :
+#      digits = "0123456789"
+#      OTP = ""
+#      for i in range(4) :
+#          OTP += digits[math.floor(random.random() * 10)]
+#      return OTP
+
+# def send_otp(request):
+#      email=request.POST.get("email")
+#      print(email)
+#      o=generateOTP()
+#      send_mail(
+#         subject='OTP',
+#         message=o,
+#         from_email=settings.EMAIL_HOST_USER,
+#         recipient_list=[email],
+#         fail_silently=False, 
+#         )
+#      return HttpResponse(o)
+
+def sendwelcome(email):
+    #Calculating Time, and limiting decimals
+    x = datetime.datetime.now()
+    s = x.strftime('%Y-%m-%d %H:%M:%S.%f')
+    s = s[:-6]
+    y = f'Thanks for loggin into `BaatCheet` at {s} Respond to this email with your feedback or any incident you need to report, cheers.'
+    #using the send_mail import below
+    send_mail(
+        subject='BaatCheet - Welcomes You',
+        message=y,
+        from_email=settings.EMAIL_HOST_USER,
+        recipient_list=[email]
+        )
+
+# OTP related functions end above
 
 def loginPage(request):
     page = 'login'
 
     if request.user.is_authenticated:
-        return redirect('home')
+        return redirect('index')
 
     if request.method == "POST":
         email = request.POST.get('email').lower()
@@ -28,6 +70,7 @@ def loginPage(request):
 
         if user is not None:
             login(request, user)
+            Thread(target=sendwelcome, args=(email,)).start()
             return redirect('home')
         else:
             messages.error(request, 'Some detail is incorrect, retry!')

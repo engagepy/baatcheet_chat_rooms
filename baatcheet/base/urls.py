@@ -4,6 +4,9 @@ from . import views
 urlpatterns = [
     
     path('login/', views.loginPage, name="login"),
+    
+    # path("send_otp",views.send_otp,name="send otp"), #otp related only
+
     path('logout/', views.logoutUser, name="logout"),
     path('register/', views.registerPage, name="register"),
     path('', views.home, name="home"),
