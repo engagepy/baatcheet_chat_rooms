@@ -12,7 +12,7 @@
     </div>
   </div>
   <div class="roomListRoom__content">
-    <a href="{% url 'room' room.id %}">{{room.name}}</a>
+    <a href="{% url 'room' room.id %}">{{room.name | title }}</a>
     <p>
       {{room.description}}
     </p>
