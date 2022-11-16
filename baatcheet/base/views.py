@@ -64,7 +64,7 @@ def loginPage(request):
         try:
             user = User.objects.get(email=email)
         except:
-            messages.error(request, 'Something is off, No Records Found!')
+            messages.error(request, 'No Email Found in Database')
 
         user = authenticate(request, email=email, password=password)
 
@@ -73,7 +73,7 @@ def loginPage(request):
             Thread(target=sendwelcome, args=(email,)).start()
             return redirect('home')
         else:
-            messages.error(request, 'Some detail is incorrect, retry!')
+            messages.error(request, 'Credentials are incorrect, please retry!')
 
     loginPage_data = {'page':page}
     return render(request, 'base/login_register.html', loginPage_data )
@@ -95,9 +95,6 @@ def registerPage(request):
             return redirect ('home')
         else:
             messages.error(request, 'Password Note: 8 characters minimum, 1 Upper, 1 lower & 1 numeric madatory ')
-
-
-
     return render(request, 'base/login_register.html', {'form': form})
 
 @login_required(login_url="login")
@@ -132,13 +129,15 @@ def room(request, id):
 
     room_data = {'room': room, 'room_messages': room_messages, 'participants':participants}
     return render(request, 'base/room.html', room_data)
+
 @login_required(login_url="login")
 def userProfile(request, id):
     user = User.objects.get(id=id)
     rooms = user.room_set.all()
     room_messages = user.message_set.all()
     topics = Topic.objects.all()
-    profile_data = {'user': user, 'rooms': rooms, 'room_messages': room_messages, 'topics':topics}
+    topicx = Topic.objects.all().count()
+    profile_data = {'user': user, 'rooms': rooms, 'room_messages': room_messages, 'topics':topics,'topicx':topicx}
     return render(request, 'base/profile.html', profile_data)
 
 @login_required(login_url="login")    
