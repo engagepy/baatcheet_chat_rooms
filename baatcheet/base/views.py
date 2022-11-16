@@ -94,7 +94,7 @@ def registerPage(request):
             login(request, user)
             return redirect ('home')
         else:
-            messages.error(request, 'Password Note: 8 characters, 1 Upper, 1 lower, & 1 numeric madatory ')
+            messages.error(request, 'Password Note: 8 characters minimum, 1 Upper, 1 lower & 1 numeric madatory ')
 
 
 
