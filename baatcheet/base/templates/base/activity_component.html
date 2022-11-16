@@ -3,6 +3,7 @@
     <h2>Recent Activity</h2>
   </div>
   {% for message in room_messages %}
+  {% if forloop.counter <= 6 %}
   <div class="activities__box">
     <div class="activities__boxHeader roomListRoom__header">
       <a href="{% url 'userprofile' message.user.id %}" class="roomListRoom__author">
@@ -34,5 +35,6 @@
       </div>
     </div>
   </div>
+  {% endif %}
   {% endfor %}
 </div>
