@@ -26,7 +26,7 @@ SECRET_KEY=os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','35.154.103.55', 'baatcheet.app']
+ALLOWED_HOSTS = ['127.0.0.1', 'baatcheet.app']
 
 
 # Application definition
@@ -43,6 +43,15 @@ INSTALLED_APPS = [
     
     'rest_framework',
     'corsheaders',
+
+#AllAuth Related Setting Below
+
+    # 'django.contrib.sites', # must
+    # 'allauth', # must
+    # 'allauth.account', # must
+    # 'allauth.socialaccount', # must
+    # 'allauth.socialaccount.providers.google', # new
+
 ]
 
 AUTH_USER_MODEL = 'base.User'
@@ -176,3 +185,19 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ['gmail_host']
 EMAIL_HOST_PASSWORD = os.environ['gmail_password']
+
+# Google - AllAuth Related Settings Below 
+
+# SITE_ID = 1
+
+# AUTHENTICATION_BACKENDS = [
+#     # Needed to login by username in Django admin, regardless of `allauth`
+#     'django.contrib.auth.backends.ModelBackend',
+
+#     # `allauth` specific authentication methods, such as login by e-mail
+#     'allauth.account.auth_backends.AuthenticationBackend',
+# ]
+
+# ACCOUNT_EMAIL_VERIFICATION = 'True'
+
+# LOGIN_REDIRECT_URL = '/'
