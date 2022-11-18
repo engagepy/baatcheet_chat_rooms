@@ -42,7 +42,8 @@
 
     .env
 
-![Alt text](../../../../Desktop/Screenshot%202022-11-19%20at%2002.31.15.png)
+![Screenshot 2022-11-19 at 02 31 15](https://user-images.githubusercontent.com/42845567/202801874-7df55d3e-2c16-4fec-a82a-eb3788a772a0.png)
+
 
 
 
