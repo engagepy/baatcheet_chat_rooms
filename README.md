@@ -50,7 +50,8 @@
 
     .env
 
-![Screenshot 2022-11-19 at 02 33 40](https://user-images.githubusercontent.com/42845567/202802065-2d0a0ac3-9a7c-481c-a974-5cbbe21ec39a.png)
+![Screenshot 2022-11-19 at 02 52 49](https://user-images.githubusercontent.com/42845567/202804845-53e760f8-fabe-4d88-bbcd-b9ba593e7a20.png)
+
 
 
 
