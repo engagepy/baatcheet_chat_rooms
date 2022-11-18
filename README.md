@@ -3,7 +3,15 @@
 
 
 
-# Django Scaffold - AWS > EC2 > RDS PostgreSQL > Load Balancer > Nginx > Gunicorn > Domain
+# Django Topic Board Scaffold - ![Deployed Example](https://baatcheet.app)
+# Production Settings Includes
+- AWS
+- EC2 
+- RDS PostgreSQL
+- Load Balancer 
+- Nginx 
+- Gunicorn 
+- Domain
 
 ## A Scafold Project Enabling CRUD functionality:
 
