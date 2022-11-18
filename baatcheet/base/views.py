@@ -51,53 +51,54 @@ def sendwelcome(email):
 
 # OTP related functions end above
 
-def loginPage(request):
-    page = 'login'
+# Custom Login - Logout Functions Below [Comment Out Since Using `django-allauth`]
+# def loginPage(request):
+#     page = 'login'
 
-    if request.user.is_authenticated:
-        return redirect('index')
+#     if request.user.is_authenticated:
+#         return redirect('index')
 
-    if request.method == "POST":
-        email = request.POST.get('email').lower()
-        password = request.POST.get('password')
+#     if request.method == "POST":
+#         email = request.POST.get('email').lower()
+#         password = request.POST.get('password')
 
-        try:
-            user = User.objects.get(email=email)
-        except:
-            messages.error(request, 'No Email Found in Database')
+#         try:
+#             user = User.objects.get(email=email)
+#         except:
+#             messages.error(request, 'No Email Found in Database')
 
-        user = authenticate(request, email=email, password=password)
+#         user = authenticate(request, email=email, password=password)
 
-        if user is not None:
-            login(request, user)
-            Thread(target=sendwelcome, args=(email,)).start()
-            return redirect('home')
-        else:
-            messages.error(request, 'Credentials are incorrect, please retry!')
+#         if user is not None:
+#             login(request, user)
+#             Thread(target=sendwelcome, args=(email,)).start()
+#             return redirect('home')
+#         else:
+#             messages.error(request, 'Credentials are incorrect, please retry!')
 
-    loginPage_data = {'page':page}
-    return render(request, 'base/login_register.html', loginPage_data )
+#     loginPage_data = {'page':page}
+#     return render(request, 'base/login_register.html', loginPage_data )
 
-def logoutUser(request):
-    logout(request)
-    return redirect('home')
+# def logoutUser(request):
+#     logout(request)
+#     return redirect('home')
 
-def registerPage(request):
-    form = MyUserCreationForm()
+# def registerPage(request):
+#     form = MyUserCreationForm()
 
-    if request.method == "POST":
-        form = MyUserCreationForm(request.POST)
-        if form.is_valid():
-            user = form.save(commit=False)
-            user.username = user.username.lower()
-            user.save()
-            login(request, user)
-            return redirect ('home')
-        else:
-            messages.error(request, 'Password Note: 8 characters minimum, 1 Upper, 1 lower & 1 numeric madatory ')
-    return render(request, 'base/login_register.html', {'form': form})
+#     if request.method == "POST":
+#         form = MyUserCreationForm(request.POST)
+#         if form.is_valid():
+#             user = form.save(commit=False)
+#             user.username = user.username.lower()
+#             user.save()
+#             login(request, user)
+#             return redirect ('home')
+#         else:
+#             messages.error(request, 'Password Note: 8 characters minimum, 1 Upper, 1 lower & 1 numeric madatory ')
+#     return render(request, 'base/login_register.html', {'form': form})
 
-@login_required(login_url="accounts/login")
+@login_required()
 def home(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
     rooms = Room.objects.filter(
@@ -112,7 +113,7 @@ def home(request):
     home_data = {'rooms': rooms, 'topics': topic, 'room_count': room_count,'topicx':topicx, 'room_messages':room_messages }
     return render(request, 'base/home.html', home_data )
 
-@login_required(login_url="accounts/login")
+@login_required()
 def room(request, id):
     room = Room.objects.get(id=id)
     room_messages = room.message_set.all()
@@ -130,7 +131,7 @@ def room(request, id):
     room_data = {'room': room, 'room_messages': room_messages, 'participants':participants}
     return render(request, 'base/room.html', room_data)
 
-@login_required(login_url="accounts/login")
+@login_required()
 def userProfile(request, id):
     user = User.objects.get(id=id)
     rooms = user.room_set.all()
@@ -140,7 +141,7 @@ def userProfile(request, id):
     profile_data = {'user': user, 'rooms': rooms, 'room_messages': room_messages, 'topics':topics,'topicx':topicx}
     return render(request, 'base/profile.html', profile_data)
 
-@login_required(login_url="accounts/login")    
+@login_required()   
 def createRoom(request):
     form = RoomForm()
     topics = Topic.objects.all()
@@ -149,9 +150,6 @@ def createRoom(request):
         topic, created = Topic.objects.get_or_create(name=topic_name)
 
         # Get_Or_Create Object Below
-
-        
-
         Room.objects.create(
             host=request.user,
             topic=topic,
@@ -159,8 +157,6 @@ def createRoom(request):
             description=request.POST.get('description'),
         )
         return redirect('home')
-
-
         #Another Method Form 
 
         # form = RoomForm(request.POST)
@@ -175,7 +171,7 @@ def createRoom(request):
     
     return render(request, 'base/room_form.html', create_data)
 
-@login_required(login_url="accounts/login") 
+@login_required() 
 def updateRoom(request, id):
     room = Room.objects.get(id=id)
     form = RoomForm(instance=room)
@@ -196,7 +192,7 @@ def updateRoom(request, id):
     update_data = {'form': form, 'topics': topics, 'room': room}
     return render(request, 'base/room_form.html', update_data)
 
-@login_required(login_url="accounts/login") 
+@login_required() 
 def deleteRoom(request, id):
     room = Room.objects.get(id=id)
 
@@ -209,7 +205,7 @@ def deleteRoom(request, id):
 
     return render(request, 'base/delete.html', {'obj': room})
 
-@login_required(login_url="accounts/login") 
+@login_required() 
 def deleteMessage(request, id):
     message = Message.objects.get(id=id)
 
@@ -222,7 +218,7 @@ def deleteMessage(request, id):
 
     return render(request, 'base/delete.html', {'obj': message})
 
-@login_required(login_url="accounts/login")
+@login_required()
 def updateUser(request):
     user = request.user
     form = UserForm(instance = user)
@@ -232,15 +228,15 @@ def updateUser(request):
         if form.is_valid():
             form.save()
             return redirect ('userprofile', id=user.id)
-
-
     return render(request,'base/updateuser.html' , {'form': form})
-@login_required(login_url="accounts/login")
+
+@login_required()
 def topicsPage(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
     topics = Topic.objects.filter(name__icontains=q)
     return render(request, 'base/topics.html', {'topics': topics})
-@login_required(login_url="accounts/register")
+
+@login_required()
 def activityPage(request):
     room_messages = Message.objects.all()
     return render(request, 'base/activity.html', {'room_messages': room_messages})
