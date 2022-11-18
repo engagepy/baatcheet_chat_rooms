@@ -3,11 +3,11 @@ from . import views
 
 urlpatterns = [
     
-    path('login/', views.loginPage, name="login"),
-    path('logout/', views.logoutUser, name="logout"),
-    path('register/', views.registerPage, name="register"),
+    # path('login/', views.loginPage, name="login"),
+    # path('logout/', views.logoutUser, name="logout"),
+    # path('register/', views.registerPage, name="register"),
 
-    # path('accounts/', include('allauth.urls')),
+    path('accounts/', include('allauth.urls')),
     
     # path("send_otp",views.send_otp,name="send otp"), #otp related only
 

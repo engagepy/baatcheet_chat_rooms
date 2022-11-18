@@ -38,7 +38,7 @@
         {% else %}
 
                 <!-- Not Logged In -->
-        <a href="{% url 'login' %}">
+        <a href="{% url 'account_login' %}">
           <img src="{% static '/images/avatar.svg' %}" /> 
           <p>Login</p>
         </a>
@@ -54,7 +54,7 @@
             </svg>
             Settings</a
           >
-          <a href="{% url 'logout' %}" class="dropdown-link"
+          <a href="{% url 'account_logout' %}" class="dropdown-link"
             ><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
               <title>sign-out</title>
               <path

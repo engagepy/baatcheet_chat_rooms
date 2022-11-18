@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY=os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'baatcheet.app']
 
@@ -46,11 +46,11 @@ INSTALLED_APPS = [
 
 #AllAuth Related Setting Below
 
-    # 'django.contrib.sites', # must
-    # 'allauth', # must
-    # 'allauth.account', # must
-    # 'allauth.socialaccount', # must
-    # 'allauth.socialaccount.providers.google', # new
+    'django.contrib.sites', # must
+    'allauth', # must
+    'allauth.account', # must
+    'allauth.socialaccount', # must
+    'allauth.socialaccount.providers.google', # new
 
 ]
 
@@ -188,16 +188,19 @@ EMAIL_HOST_PASSWORD = os.environ['gmail_password']
 
 # Google - AllAuth Related Settings Below 
 
-# SITE_ID = 1
+SITE_ID = 1
 
-# AUTHENTICATION_BACKENDS = [
-#     # Needed to login by username in Django admin, regardless of `allauth`
-#     'django.contrib.auth.backends.ModelBackend',
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
 
-#     # `allauth` specific authentication methods, such as login by e-mail
-#     'allauth.account.auth_backends.AuthenticationBackend',
-# ]
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 
-# ACCOUNT_EMAIL_VERIFICATION = 'True'
+ACCOUNT_EMAIL_REQUIRED = True 
 
-# LOGIN_REDIRECT_URL = '/'
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+
+LOGIN_REDIRECT_URL = '/'

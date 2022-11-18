@@ -97,7 +97,7 @@ def registerPage(request):
             messages.error(request, 'Password Note: 8 characters minimum, 1 Upper, 1 lower & 1 numeric madatory ')
     return render(request, 'base/login_register.html', {'form': form})
 
-@login_required(login_url="login")
+@login_required(login_url="accounts/login")
 def home(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
     rooms = Room.objects.filter(
@@ -240,7 +240,7 @@ def topicsPage(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
     topics = Topic.objects.filter(name__icontains=q)
     return render(request, 'base/topics.html', {'topics': topics})
-@login_required(login_url="login")
+@login_required(login_url="accounts/register")
 def activityPage(request):
     room_messages = Message.objects.all()
     return render(request, 'base/activity.html', {'room_messages': room_messages})
