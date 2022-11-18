@@ -3,7 +3,8 @@
 
 
 
-# Django Topic Board Scaffold - Deployed Example @ [BaatCheet.app](https://baatcheet.app)
+# Django Topic Board Scaffold 
+- Deployed @ [BaatCheet.app](https://baatcheet.app)
 # Production Settings Includes
 - AWS
 - EC2 
