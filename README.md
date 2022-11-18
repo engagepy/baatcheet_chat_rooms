@@ -46,7 +46,7 @@
 
 
 
-> add following variables to .env: 
+> add following variables to .env for production: 
 
     AWS_KEY =      
 
@@ -58,14 +58,34 @@
 
     SECRET_KEY =
 
+### or
+
+ > to run locally you only need to add SECRET_KEY to .env: 
+
+    #AWS_KEY =      
+
+    #AWS_ACC_KEY = 
+
+    #BUCKET_NAME = 
+
+    #PASSWORD =
+
+    SECRET_KEY =
+
 #### 5. Install 'requirements.txt'
 
-    pip3 install -r requirements.txt    
+> `pip3 install -r requirements.txt`
+
+> `python3 manage.py makemigrations`
+
+> `python3 manage.py migrate --run-syncdb`
+
+> `python3 manage.py runserver`
 
 #### 6. cd into the 'baatcheet' directory 
 
-    cd baatcheet    
+> `cd baatcheet`    
 
 #### 7. Run ```manage.py```
 
-    python3 manage.py runserver 
+> `python3 manage.py runserver` 
