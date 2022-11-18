@@ -74,18 +74,18 @@
 
 #### 5. Install 'requirements.txt'
 
-> `pip3 install -r requirements.txt`
+    pip3 install -r requirements.txt
 
-> `python3 manage.py makemigrations`
+    python3 manage.py makemigrations
 
-> `python3 manage.py migrate --run-syncdb`
+    python3 manage.py migrate --run-syncdb
 
-> `python3 manage.py runserver`
+    python3 manage.py runserver
 
 #### 6. cd into the 'baatcheet' directory 
 
-> `cd baatcheet`    
+    cd baatcheet
 
 #### 7. Run ```manage.py```
 
-> `python3 manage.py runserver` 
+    python3 manage.py runserver
