@@ -32,7 +32,7 @@
 
 #### 3. Clone the Repo
 
-    git clone https://github.com/zora89/django_baatcheet.git
+    git clone https://github.com/engagepy/django_baatcheet
 
 #### 4. Setup a .env file 
 
@@ -41,6 +41,9 @@
     baatcheet⮐
 
     .env
+
+![Alt text](../../../../Desktop/Screenshot%202022-11-19%20at%2002.31.15.png)
+
 
 
 > add following variables to .env: 
