@@ -112,7 +112,7 @@ def home(request):
     home_data = {'rooms': rooms, 'topics': topic, 'room_count': room_count,'topicx':topicx, 'room_messages':room_messages }
     return render(request, 'base/home.html', home_data )
 
-@login_required(login_url="login")
+@login_required(login_url="accounts/login")
 def room(request, id):
     room = Room.objects.get(id=id)
     room_messages = room.message_set.all()
@@ -130,7 +130,7 @@ def room(request, id):
     room_data = {'room': room, 'room_messages': room_messages, 'participants':participants}
     return render(request, 'base/room.html', room_data)
 
-@login_required(login_url="login")
+@login_required(login_url="accounts/login")
 def userProfile(request, id):
     user = User.objects.get(id=id)
     rooms = user.room_set.all()
@@ -140,7 +140,7 @@ def userProfile(request, id):
     profile_data = {'user': user, 'rooms': rooms, 'room_messages': room_messages, 'topics':topics,'topicx':topicx}
     return render(request, 'base/profile.html', profile_data)
 
-@login_required(login_url="login")    
+@login_required(login_url="accounts/login")    
 def createRoom(request):
     form = RoomForm()
     topics = Topic.objects.all()
@@ -175,7 +175,7 @@ def createRoom(request):
     
     return render(request, 'base/room_form.html', create_data)
 
-@login_required(login_url="login") 
+@login_required(login_url="accounts/login") 
 def updateRoom(request, id):
     room = Room.objects.get(id=id)
     form = RoomForm(instance=room)
@@ -196,7 +196,7 @@ def updateRoom(request, id):
     update_data = {'form': form, 'topics': topics, 'room': room}
     return render(request, 'base/room_form.html', update_data)
 
-@login_required(login_url="login") 
+@login_required(login_url="accounts/login") 
 def deleteRoom(request, id):
     room = Room.objects.get(id=id)
 
@@ -209,7 +209,7 @@ def deleteRoom(request, id):
 
     return render(request, 'base/delete.html', {'obj': room})
 
-@login_required(login_url="login") 
+@login_required(login_url="accounts/login") 
 def deleteMessage(request, id):
     message = Message.objects.get(id=id)
 
@@ -222,7 +222,7 @@ def deleteMessage(request, id):
 
     return render(request, 'base/delete.html', {'obj': message})
 
-@login_required(login_url="login")
+@login_required(login_url="accounts/login")
 def updateUser(request):
     user = request.user
     form = UserForm(instance = user)
@@ -235,7 +235,7 @@ def updateUser(request):
 
 
     return render(request,'base/updateuser.html' , {'form': form})
-@login_required(login_url="login")
+@login_required(login_url="accounts/login")
 def topicsPage(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
     topics = Topic.objects.filter(name__icontains=q)
