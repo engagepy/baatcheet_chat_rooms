@@ -20,8 +20,7 @@
       <div class="layout__body">
         <h2 class="auth__tagline">BaatCheet - Topics That Matter</h2>
 
-<p>Have not created an account yet, please
-<a href="{{ signup_url }}">Sign Up</a></p><br>
+<p>Don't have an account yet, do <a href="{{ signup_url }}">Sign Up</a></p><br>
 
 <form class="login" method="POST" action="{% url 'account_login' %}">
   {% csrf_token %}
