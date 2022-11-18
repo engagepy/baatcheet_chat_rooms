@@ -44,18 +44,18 @@
 
 #### 4. Setup a .env file 
 
-> Directory structure for .env:
+##### Directory structure for .env:
 
     baatcheet⮐
 
     .env
+    
+    manage.py
 
 ![Screenshot 2022-11-19 at 02 52 49](https://user-images.githubusercontent.com/42845567/202804845-53e760f8-fabe-4d88-bbcd-b9ba593e7a20.png)
 
 
-
-
-> add following variables to .env for production: 
+##### Add following variables to .env for production: 
 
     AWS_KEY =      
 
@@ -67,9 +67,23 @@
 
     SECRET_KEY =
 
-### or
+##### Update following variables in settings.py for production:
 
- > to run locally you only need to add SECRET_KEY to .env: 
+
+    DATABASES = {
+        'default': {
+            'ENGINE': ,
+            'NAME': ,
+            'USER': ,
+            'PASSWORD': os.environ['PASSWORD'],
+            'HOST': ,
+            'PORT': ,
+
+        }
+    }
+##### or
+
+##### To run the project locally only add SECRET_KEY to .env: 
 
     #AWS_KEY =      
 
@@ -81,7 +95,7 @@
 
     SECRET_KEY =
 
-#### 5. Install 'requirements.txt'
+#### 5. Install `requirements.txt` , `makemigrations`, `migrate` -> `runserver` 
 
     pip3 install -r requirements.txt
 
