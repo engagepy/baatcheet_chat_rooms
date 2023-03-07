@@ -101,7 +101,7 @@ DATABASES = {
         'NAME': 'BaatCheet',
         'USER': 'BaatCheet',
         'PASSWORD': os.environ['PASSWORD'],
-        'HOST': 'database-1.ckkmqlz6k2zt.ap-south-1.rds.amazonaws.com',
+        'HOST': os.environ['DB_ENDPOINT'],
         'PORT': 5432
 
     }
