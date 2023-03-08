@@ -26,7 +26,7 @@ SECRET_KEY=os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'baatcheet.app']
+ALLOWED_HOSTS = ['127.0.0.1', 'baatcheet.app' , '3.110.245.35']
 
 
 # Application definition
@@ -98,7 +98,7 @@ WSGI_APPLICATION = 'baatcheet.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'BaatCheet',
+        'NAME': 'mydb',
         'USER': 'BaatCheet',
         'PASSWORD': os.environ['PASSWORD'],
         'HOST': os.environ['DB_ENDPOINT'],
