@@ -26,7 +26,7 @@ SECRET_KEY=os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'baatcheet.app' , '3.110.245.35', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'baatcheet.app', 'localhost']
 
 
 # Application definition
@@ -162,7 +162,7 @@ SECURE_SSL_REDIRECT = False
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOW_ALL_ORIGINS = True
-CSRF_TRUSTED_ORIGINS = ['http://3.110.245.35/', 'https://3.110.245.35/', 'http://baatcheet.app/', 'https://baatcheet.app/']
+CSRF_TRUSTED_ORIGINS = ['https://baatcheet.app/']
 
 #INSTRUCTIONS FOR S3 UPLOAD AND CSS RENDERING 
 #STATIC LOCATIONS NEED DEPTH AND SECRETS NEEDS TO PLATFORM INDEPEDENT
