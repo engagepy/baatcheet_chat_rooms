@@ -9,7 +9,6 @@
 - AWS
 - EC2 
 - RDS PostgreSQL
-- Load Balancer 
 - Nginx 
 - Gunicorn 
 - Domain
