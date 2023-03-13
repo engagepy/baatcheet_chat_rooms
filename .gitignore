@@ -6,7 +6,6 @@ sec.py
 pagekite.py
 Procfile
 .DS_Store
-.gitignore
 
 **/__pycache__
 
